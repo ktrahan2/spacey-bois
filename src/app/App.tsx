@@ -1,8 +1,8 @@
 import {StrictMode} from 'react';
 import {Provider} from 'react-redux';
 import {store} from './redux/store';
-import {BrowserRouter, Route, Routes} from 'react-router-dom';
-import {ROUTES} from '@root/types/constants';
+import {BrowserRouter, Routes} from 'react-router-dom';
+// import {ROUTES} from '@root/types/constants';
 
 export const App = () => {
     return (
@@ -16,5 +16,3 @@ export const App = () => {
         </StrictMode>
     )
 }
-
-export default App;

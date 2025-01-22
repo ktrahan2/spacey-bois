@@ -1,5 +1,7 @@
+import { createUserFactory } from '@root/testing/factories';
 import {delay, http, HttpResponse} from 'msw';
-import {mockedUserData} from '../routes/userProfile/mockData';
+
+const mockedUserData = createUserFactory();
 
 export const handlers = [
   http.post('/auth', async ({request}) => {

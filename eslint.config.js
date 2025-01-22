@@ -38,7 +38,7 @@ export default [
       'react-hooks/exhaustive-deps': 'warn',
 
       // TypeScript rules
-      '@typescript-eslint/no-unused-vars': 'warn',
+      '@typescript-eslint/no-unused-vars': 'local',
       '@typescript-eslint/no-explicit-any': 'warn',
     },
     settings: {
