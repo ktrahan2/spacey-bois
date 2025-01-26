@@ -11,6 +11,11 @@ export default [
   },
   eslint.configs.recommended,
   {
+    extends: [
+      'plugin:react/recommended',
+      'plugin:@typescript-eslint/recommended',
+      'plugin:prettier/recommended',
+    ],
     files: ['**/*.{js,jsx,ts,tsx}'],
     languageOptions: {
       parser: typescript,
@@ -38,7 +43,7 @@ export default [
       'react-hooks/exhaustive-deps': 'warn',
 
       // TypeScript rules
-      '@typescript-eslint/no-unused-vars': 'local',
+      '@typescript-eslint/no-unused-vars': 'off',
       '@typescript-eslint/no-explicit-any': 'warn',
     },
     settings: {
