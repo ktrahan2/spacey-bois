@@ -7,7 +7,10 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
+      '@hooks': path.resolve(__dirname, './src/hooks'),
+      '@lib': path.resolve(__dirname, './src/lib'),
       '@root': path.resolve(__dirname, './src'),
+      '@testing': path.resolve(__dirname, './src/testing'),
     },
   },
 });

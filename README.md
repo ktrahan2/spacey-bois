@@ -2,12 +2,8 @@
 
 ## Tech needed to set up:
 
-- React Router
 - Redux/RTK
   - What do we actually need here?
-- Typescript up to date
-- Suspense
-- Error Boundary
 
 ## Alert System:
 
@@ -15,8 +11,6 @@
 
 ## Router:
 
-- Define error boundary
-- Lazy Loading
 - Auth
   - Login
   - Register
@@ -31,7 +25,6 @@
       - Requires save system
 
 ## Firebase Database
-
 - Make firebase database
   - Define Models
     - User
@@ -40,8 +33,6 @@
     - Items
 
 ## Component Design System
-
+- Start building common components
 ### MUI
-
-- install
 - set up theme

@@ -17,7 +17,10 @@
     "noFallthroughCasesInSwitch": true,
     "baseUrl": ".",
     "paths": {
-      "@root/*": ["src/*"]
+      "@hooks/*": ["src/hooks/*"],
+      "@lib/*": ["src/lib/*"],
+      "@root/*": ["src/*"],
+      "@testing/*": ["src/testing/*"]
     }
   },
   "include": ["src", "mocks"],
