@@ -1,25 +1,26 @@
 export const MAIN_HALL_ROUTES = {
   ROOT: {
     getHref: () => '/main_hall',
-    path: '/main_hall',
+    path: 'main_hall',
   },
-  STORIES_ROUTES: {
+  STORIES: {
     ROOT: {
       getHref: () => '/main_hall/stories',
-      path: '/main_hall/stories',
+      path: 'main_hall/stories',
     },
     NEW: {
       getHref: () => '/main_hall/stories/new',
-      path: '/main_hall/stories/new',
+      path: 'new',
     },
     CONTINUE: {
       getHref: () => '/main_hall/stories/continue',
-      path: '/main_hall/stories/continue',
+      path: 'continue',
     },
-    getCharacterStoryPath: (characterId: string) => ({
-      getHref: () => `/main_hall/stories/continue/${characterId}`,
-      path: `/main_hall/stories/continue/${characterId}`,
-    }),
+    getCharacterStoryPath: {
+      getHref: (characterId: string) =>
+        `/main_hall/stories/continue/${characterId}`,
+      path: 'continue/:characterId',
+    },
   },
 };
 

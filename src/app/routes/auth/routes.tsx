@@ -1,17 +1,21 @@
 export const AUTH_ROUTES = {
   LOGIN: {
-    getHref: () => '/login',
-    path: '/login',
+    getHref: () => '/auth/login',
+    path: 'login',
   },
   REGISTER: {
-    getHref: () => '/register',
-    path: '/register',
+    getHref: () => '/auth/register',
+    path: 'register',
+  },
+  ROOT: {
+    getHref: () => '/auth',
+    path: 'auth',
   },
 } as const;
 
 export const authRoutes = [
   {
-    path: AUTH_ROUTES.LOGIN.path,
-    lazy: async () => ({Component: (await import('./login')).Login}),
+    path: AUTH_ROUTES.LOGIN.getHref(),
+    lazy: async () => ({Component: (await import('./Login')).Login}),
   },
 ];
