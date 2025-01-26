@@ -1,6 +1,6 @@
 import {StrictMode, Suspense} from 'react';
 import {Provider} from 'react-redux';
-import {store} from './store/store';
+import {store} from '@root/store/store';
 import {AppRouter} from './router';
 import {ErrorBoundary} from 'react-error-boundary';
 import {MainErrorFallback} from '@root/components/errors/MainErrorFallback';
