@@ -1,6 +1,6 @@
 import type {Action, ThunkAction} from '@reduxjs/toolkit';
 import {configureStore} from '@reduxjs/toolkit';
-import {spaceyBoisApi} from './spaceyBoisApi';
+import {spaceyBoisApi} from '@lib/spaceyBoisApi';
 import {rootReducer} from './rootReducer';
 
 export const store = configureStore({
