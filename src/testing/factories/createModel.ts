@@ -1,7 +1,7 @@
 export type Model<T> = {
-    getModel: () => T;
-    resetModel: () => void;
-    updateModel: (updates: Partial<T>) => void;
+  getModel: () => T;
+  resetModel: () => void;
+  updateModel: (updates: Partial<T>) => void;
 };
 
 /**
@@ -14,14 +14,14 @@ export type Model<T> = {
  * - `updateModel`: A function that updates data within the model.
  */
 export const createModel = <T>(initialModel: T): Model<T> => {
-    let model = initialModel;
-    const originalModel = {...initialModel};
+  let model = initialModel;
+  const originalModel = {...initialModel};
 
-    return {
-        getModel: () => model,
-        resetModel: () => (model = {...originalModel}),
-        updateModel: (updates: Partial<T>) => {
-            model = {...model, ...updates};
-        },
-    };
+  return {
+    getModel: () => model,
+    resetModel: () => (model = {...originalModel}),
+    updateModel: (updates: Partial<T>) => {
+      model = {...model, ...updates};
+    },
+  };
 };

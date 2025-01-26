@@ -1,4 +1,4 @@
-import { createUserFactory } from '@root/testing/factories';
+import {createUserFactory} from '@root/testing/factories';
 import {delay, http, HttpResponse} from 'msw';
 
 const mockedUserData = createUserFactory();
@@ -13,7 +13,7 @@ export const handlers = [
     if (body?.userName === 'error') {
       return new HttpResponse(
         JSON.stringify({message: 'Authentication failed'}),
-        {status: 401}
+        {status: 401},
       );
     }
 
