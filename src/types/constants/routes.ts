@@ -1,16 +1,7 @@
+import {AUTH_ROUTES} from "@root/app/routes/auth/routes";
+import {MAIN_HALL_ROUTES} from "@root/app/routes/mainhall/routes";
+
 export const ROUTES = {
-  AUTH: {
-    LOGIN: '/login',
-    REGISTER: '/register',
-  },
-  MAIN_HALL: {
-    ROOT: '/main_hall',
-    STORIES: {
-      ROOT: '/main_hall/stories',
-      NEW: '/main_hall/stories/new',
-      CONTINUE: '/main_hall/stories/continue',
-      getCharacterStoryPath: (characterId: string) =>
-        `/main_hall/stories/continue/${characterId}`,
-    },
-  },
+  AUTH: AUTH_ROUTES,
+  MAIN_HALL: MAIN_HALL_ROUTES,
 } as const;

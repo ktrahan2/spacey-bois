@@ -1,7 +1,8 @@
 import {createBrowserRouter, Navigate, RouterProvider} from 'react-router';
-import {Login} from './routes/auth/login';
 import {ROUTES} from '@root/types/constants';
 import {MainErrorFallback} from '@root/components/errors/MainErrorFallback';
+import {authRoutes} from './routes/auth/routes';
+import {mainHallRoutes} from './routes/mainhall/routes';
 
 export const createAppRouter = () =>
   createBrowserRouter(
@@ -12,12 +13,10 @@ export const createAppRouter = () =>
         children: [
           {
             index: true,
-            element: <Navigate to={ROUTES.AUTH.LOGIN} replace />,
+            element: <Navigate to={ROUTES.AUTH.LOGIN.getHref()} replace />,
           },
-          {
-            path: ROUTES.AUTH.LOGIN,
-            lazy: async () => ({Component: Login}),
-          },
+          ...authRoutes,
+          ...mainHallRoutes,
         ],
       },
     ],

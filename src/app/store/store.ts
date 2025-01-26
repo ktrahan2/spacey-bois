@@ -1,13 +1,10 @@
 import type {Action, ThunkAction} from '@reduxjs/toolkit';
 import {configureStore} from '@reduxjs/toolkit';
-import userReducer from './userSlice';
 import {spaceyBoisApi} from './spaceyBoisApi';
+import {rootReducer} from './rootReducer';
 
 export const store = configureStore({
-  reducer: {
-    [spaceyBoisApi.reducerPath]: spaceyBoisApi.reducer,
-    user: userReducer,
-  },
+  reducer: rootReducer,
   middleware: (getDefaultMiddleWare) =>
     getDefaultMiddleWare().concat(spaceyBoisApi.middleware),
 });
