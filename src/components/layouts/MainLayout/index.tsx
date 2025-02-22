@@ -1,5 +1,5 @@
 import {Outlet} from 'react-router';
-import {MainContainer} from './index.styles';
+import {MainContainer} from './styles';
 
 export const MainLayout = () => {
   return (

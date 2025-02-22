@@ -1,6 +1,5 @@
-import {useNavigate} from 'react-router';
 import {Typography} from '@mui/material';
-import {AuthCard, AuthContainer, AuthHeader} from './index.styles';
+import {AuthCard, AuthContainer, AuthHeader} from './styles';
 
 type AuthLayoutProps = {
   children: React.ReactNode;
@@ -8,8 +7,6 @@ type AuthLayoutProps = {
 };
 
 export const AuthLayout = ({children, title}: AuthLayoutProps) => {
-  const navigate = useNavigate();
-
   return (
     <AuthContainer>
       <AuthCard elevation={3}>

@@ -1,7 +1,9 @@
 import { createTheme } from '@mui/material/styles';
+import { Button } from './components/Button';
 
 export const theme = createTheme({
   components: {
+    MuiButton: Button,
     MuiCssBaseline: {
       styleOverrides: {
         '*': {
