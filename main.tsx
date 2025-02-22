@@ -5,7 +5,7 @@ import {App} from './src/app';
 const deferRender = async () => {
   const {worker} = await import('./mocks/browser');
 
-  return worker.start();
+  return worker.start({onUnhandledRequest: 'bypass', quiet: true});
 };
 
 deferRender().then(() => {

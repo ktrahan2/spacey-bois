@@ -25,6 +25,7 @@
       - Requires save system
 
 ## Firebase Database
+
 - Make firebase database
   - Define Models
     - User
@@ -33,6 +34,15 @@
     - Items
 
 ## Component Design System
+
 - Start building common components
+
 ### MUI
+
 - set up theme
+
+## Next Steps as of Feb 22, 2025
+- Finish api slice setup
+- Start adding Jest unit tests
+- Add Register Route
+- Start work on Mainhall

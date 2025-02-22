@@ -16,7 +16,13 @@ export const useLoginForm = () => {
     },
     validationSchema: loginValidationSchema,
     onSubmit: async (values) => {
-      login(values);
+      try {
+        await login(values).unwrap();
+
+        navigate(ROUTES.MAIN_HALL.ROOT.getHref())
+      } catch (error) {
+        console.error('Login Failed: ', error);
+      }
     },
   });
 

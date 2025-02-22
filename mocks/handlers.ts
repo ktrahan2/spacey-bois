@@ -1,21 +1,21 @@
+import {API_ENDPOINTS} from '@lib/constants';
 import {createUserFactory} from '@root/testing/factories';
+import {AuthResponse} from '@root/types';
 import {delay, http, HttpResponse} from 'msw';
 
 const mockedUserData = createUserFactory();
 
 export const handlers = [
-  http.post('/auth', async ({request}) => {
+  http.post(API_ENDPOINTS.LOGIN, async ({request}) => {
     await delay(500);
 
-    const body = (await request.json()) as {userName: string};
+    (await request.json()) as AuthResponse;
 
-    if (body?.userName === 'error') {
-      return new HttpResponse(
-        JSON.stringify({message: 'Authentication failed'}),
-        {status: 401},
-      );
+    const mockedAuthResponse = {
+      user: mockedUserData.getModel(),
+      token: 'mocked-token',
     }
 
-    return HttpResponse.json(mockedUserData);
+    return HttpResponse.json(mockedAuthResponse);
   }),
 ];
