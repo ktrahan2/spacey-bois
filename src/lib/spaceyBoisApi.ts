@@ -1,5 +1,5 @@
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react';
-import { userAuthRoutes } from './userAuthRoutes';
+import {userAuthRoutes} from './userAuthRoutes';
 
 const BASE_URL = 'http://localhost:5173/';
 

@@ -5,11 +5,10 @@ const mockedUserData = createUserFactory();
 
 export const handlers = [
   http.post('/auth', async ({request}) => {
-    await delay(500); // Optional: adds realistic delay
+    await delay(500);
 
     const body = (await request.json()) as {userName: string};
 
-    // Error case
     if (body?.userName === 'error') {
       return new HttpResponse(
         JSON.stringify({message: 'Authentication failed'}),
@@ -17,7 +16,6 @@ export const handlers = [
       );
     }
 
-    // Success case
     return HttpResponse.json(mockedUserData);
   }),
 ];

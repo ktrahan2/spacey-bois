@@ -1,6 +1,5 @@
 import {createBrowserRouter, Navigate, RouterProvider} from 'react-router';
 import {ROUTES} from '@root/types/constants';
-import {MainErrorFallback} from '@root/components/errors/MainErrorFallback';
 import {authRoutes} from './routes/auth/routes';
 import {mainHallRoutes} from './routes/mainhall/routes';
 import {MainLayout} from '@root/components/layouts/MainLayout';
@@ -11,7 +10,6 @@ export const createAppRouter = () =>
     [
       {
         children: [
-          /** @TODO Consider alternative to sending straight to login */
           {
             index: true,
             element: <Navigate to={ROUTES.AUTH.LOGIN.getHref()} replace />,
