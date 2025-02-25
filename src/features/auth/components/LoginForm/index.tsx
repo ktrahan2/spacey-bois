@@ -3,7 +3,7 @@ import {SignUpText} from './styles';
 import {Form} from '@root/features/auth/styles';
 import {useLoginForm} from '@root/features/auth/hooks';
 import {useFormFields} from '@root/hooks/useFormFields';
-import {LOGIN_FIELDS} from './constants';
+import {LOGIN_FIELDS} from '@root/features/auth/constants';
 
 export const LoginForm = () => {
   const {formik, handleSignUpClick} = useLoginForm();

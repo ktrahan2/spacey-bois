@@ -1,8 +1,8 @@
 import {useFormik} from 'formik';
 import {useNavigate} from 'react-router';
-import {loginValidationSchema} from '@root/features/auth/components/LoginForm/validations';
-import {AuthCredentials} from '@root/types';
-import { useLoginMutation } from '@lib/spaceyBoisApi';
+import {loginValidationSchema, registerValidationSchema} from '@root/features/auth/formValidations';
+import {AuthCredentials, AuthRegisterCredentials} from '@root/types';
+import { useLoginMutation, useRegisterMutation } from '@lib/spaceyBoisApi';
 import { ROUTES } from '@root/types/constants';
 
 export const useLoginForm = () => {
@@ -33,3 +33,31 @@ export const useLoginForm = () => {
     handleSignUpClick
   };
 };
+
+export const useRegisterForm = () => {
+  const navigate = useNavigate();
+  const [register] = useRegisterMutation();
+
+  const formik = useFormik<AuthRegisterCredentials>({
+    initialValues: {
+      firstName: '',
+      lastName: '',
+      username: '',
+      password: '',
+    },
+    validationSchema: registerValidationSchema,
+    onSubmit: async (values) => {
+      try {
+        await register(values).unwrap();
+
+        navigate(ROUTES.MAIN_HALL.ROOT.getHref())
+      } catch (error) {
+        console.error('Register Failed: ', error);
+      }
+    },
+  });
+
+  return {
+    formik,
+  }
+}

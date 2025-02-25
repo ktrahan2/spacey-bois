@@ -18,4 +18,8 @@ export const authRoutes = [
     path: AUTH_ROUTES.LOGIN.getHref(),
     lazy: async () => ({Component: (await import('./Login')).Login}),
   },
+  {
+    path: AUTH_ROUTES.REGISTER.getHref(),
+    lazy: async () => ({Component: (await import('./Register')).Register}),
+  },
 ];

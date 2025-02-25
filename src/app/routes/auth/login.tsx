@@ -4,7 +4,7 @@ import {LoginForm} from '@root/features/auth/components/LoginForm';
 export const Login = () => {
   return (
     <AuthLayout title="Login">
-      <LoginForm></LoginForm>
+      <LoginForm />
     </AuthLayout>
   );
 };

@@ -1,32 +1,35 @@
 import {TextField} from '@mui/material';
-import {FormikProps} from 'formik';
+import {FieldConfig, FormikProps} from 'formik';
 
-interface FieldConfig {
-  name: string;
+export type CustomFieldConfig = FieldConfig & {
   label: string;
-  type?: string;
-}
+  required?: boolean;
+};
 
 export const useFormFields = <T extends Record<string, any>>(
   formik: FormikProps<T>,
-  fields: ReadonlyArray<FieldConfig>,
+  fields: ReadonlyArray<CustomFieldConfig>,
 ) => {
-  return fields.map((field) => (
-    <TextField
-      key={field.name}
-      error={formik.touched[field.name] && Boolean(formik.errors[field.name])}
-      fullWidth
-      helperText={
-        (formik.touched[field.name] && (formik.errors[field.name] as string)) ||
-        ''
-      }
-      id={field.name}
-      label={field.label}
-      name={field.name}
-      onBlur={formik.handleBlur}
-      onChange={formik.handleChange}
-      type={field.type || 'text'}
-      value={formik.values[field.name]}
-    />
-  ));
+  return fields.map((field) => {
+    const {label, name, required = true} = field;
+
+    return (
+      <TextField
+        error={formik.touched[name] && Boolean(formik.errors[name])}
+        fullWidth
+        helperText={
+          (formik.touched[name] && (formik.errors[name] as string)) || ''
+        }
+        id={name}
+        key={name}
+        label={label}
+        name={name}
+        onBlur={formik.handleBlur}
+        onChange={formik.handleChange}
+        required={required}
+        type={field.type || 'text'}
+        value={formik.values[name]}
+      />
+    );
+  });
 };

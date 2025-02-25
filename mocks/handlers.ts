@@ -18,4 +18,16 @@ export const handlers = [
 
     return HttpResponse.json(mockedAuthResponse);
   }),
+  http.post(API_ENDPOINTS.REGISTER, async ({request}) => {
+    await delay(500);
+
+    await(request.json()) as AuthResponse;
+
+    const mockedAuthResponse = {
+      user: mockedUserData.getModel(),
+      token: 'mocked-token',
+    }
+
+    return HttpResponse.json(mockedAuthResponse);
+  })
 ];

@@ -11,4 +11,4 @@ export const spaceyBoisApi = createApi({
   }),
 });
 
-export const {useLoginMutation} = spaceyBoisApi;
+export const {useLoginMutation, useRegisterMutation} = spaceyBoisApi;
