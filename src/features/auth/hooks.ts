@@ -2,7 +2,7 @@ import {useFormik} from 'formik';
 import {useNavigate} from 'react-router';
 import {loginValidationSchema, registerValidationSchema} from '@root/features/auth/formValidations';
 import {AuthCredentials, AuthRegisterCredentials} from '@root/types';
-import { useLoginMutation, useRegisterMutation } from '@lib/spaceyBoisApi';
+import { useLoginMutation, useRegisterMutation } from '@lib/spaceyBoisAPI';
 import { ROUTES } from '@root/types/constants';
 
 export const useLoginForm = () => {

@@ -44,6 +44,5 @@
 ## Next Steps as of Feb 22, 2025
 - Finish api slice setup
 - Start adding Jest unit tests
-- Add Register Route
-  - For password forms - https://www.chromium.org/developers/design-documents/create-amazing-password-forms/
+- For password forms - https://www.chromium.org/developers/design-documents/create-amazing-password-forms/
 - Start work on Mainhall
