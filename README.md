@@ -42,7 +42,7 @@
 - set up theme
 
 ## Next Steps as of Feb 22, 2025
-- Finish api slice setup
+
 - Start adding Jest unit tests
 - For password forms - https://www.chromium.org/developers/design-documents/create-amazing-password-forms/
 - Start work on Mainhall
